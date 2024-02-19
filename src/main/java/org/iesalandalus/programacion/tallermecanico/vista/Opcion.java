@@ -26,7 +26,7 @@ public enum Opcion {
     SALIR(19,"Salir");
     private String mensaje;
     private int numeroOpcion;
-    private static Map<Integer, Opcion> opciones = new EnumMap<>();
+    private static Map<Integer, Opcion> opciones = new HashMap<>();
     private Opcion(int numeroOpcion, String mensaje) {
         this.mensaje = mensaje;
         this.numeroOpcion = numeroOpcion;

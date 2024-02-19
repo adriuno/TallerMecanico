@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum Opcion {
-    INSERTAR_CLIENTE(1,"Insertar Cliente",),
+    INSERTAR_CLIENTE(1,"Insertar Cliente"),
     BUSCAR_CLIENTE(2,"Buscar Cliente"),
     BORRAR_CLIENTE(3,"Borrar Cliente"),
     LISTAR_CLIENTES(4,"Listar Clientes"),

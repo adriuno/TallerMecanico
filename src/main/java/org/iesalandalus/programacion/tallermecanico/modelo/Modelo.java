@@ -32,12 +32,14 @@ public class Modelo {
         System.out.print("El modelo ha terminado de ejecutarse.");
     }
     public void insertar(Cliente cliente) throws OperationNotSupportedException {
+        Objects.requireNonNull(cliente, "El cliente a insertar no puede ser nulo.");
         clientes.insertar(new Cliente(cliente));
     }
     public void insertar(Vehiculo vehiculo) throws OperationNotSupportedException {
         vehiculos.insertar(vehiculo);
     }
     public void insertar(Revision revision) throws OperationNotSupportedException {
+        Objects.requireNonNull(revision, "La revisión a insertar no puede ser nula.");
         Cliente cliente = clientes.buscar(revision.getCliente());
         Vehiculo vehiculo = vehiculos.buscar(revision.getVehiculo());
         revisiones.insertar(new Revision(cliente, vehiculo, revision.getFechaInicio()));
@@ -48,13 +50,11 @@ public class Modelo {
         return new Cliente(cliente);
     }
     public Vehiculo buscar(Vehiculo vehiculo) {
-        Objects.requireNonNull(vehiculo, "El vehículo no puede ser nulo buscar.");
-        vehiculos.buscar(vehiculo);
+        Objects.requireNonNull(vehiculos.buscar(vehiculo), "El vehículo no puede ser nulo buscar.");
         return vehiculo;
     }
     public Revision buscar(Revision revision) {
-        Objects.requireNonNull(revision, "La revisión no puede ser nula buscar.");
-        revisiones.buscar(revision);
+        Objects.requireNonNull(revisiones.buscar(revision), "La revisión no puede ser nula buscar.");
         return new Revision(revision);
     }
     public boolean modificar(Cliente cliente, String nombre, String telefono) throws OperationNotSupportedException {

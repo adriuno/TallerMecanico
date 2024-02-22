@@ -29,21 +29,13 @@ public class Clientes {
         if (!clientes.contains(cliente)) {
             throw new OperationNotSupportedException("No existe ningún cliente con ese DNI.");
         }
-        try {
-            if (!nombre.isBlank()) {
-                cliente.setNombre(nombre);
-                modificacion = true;
-            }
-        } catch (NullPointerException e) {
-            System.out.print(e.getMessage());
+        if (nombre != null && !nombre.isBlank()) {
+            cliente.setNombre(nombre);
+            modificacion = true;
         }
-        try {
-            if (!telefono.isBlank()) {
-                cliente.setTelefono(telefono);
-                modificacion = true;
-            }
-        } catch (NullPointerException e) {
-            System.out.print(e.getMessage());
+        if (telefono != null && !telefono.isBlank()) {
+            cliente.setTelefono(telefono);
+            modificacion = true;
         }
 
         return modificacion;

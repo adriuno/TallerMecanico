@@ -14,7 +14,7 @@ public class Vehiculos {
         vehiculos = new ArrayList<>();
     }
     public List<Vehiculo> get() {
-        return vehiculos;
+        return new ArrayList<>(vehiculos);
     }
     public void insertar(Vehiculo vehiculo) throws OperationNotSupportedException {
         Objects.requireNonNull(vehiculo, "No se puede insertar un vehículo nulo.");

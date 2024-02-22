@@ -7,7 +7,7 @@ import java.util.Objects;
 
 public class Vista {
     Controlador controlador;
-    private Vista() {    }
+    public Vista() {    }
 
     public void setControlador(Controlador controlador) {
         Objects.requireNonNull(controlador, "El controlador no puede ser nulo.");

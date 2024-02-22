@@ -35,19 +35,16 @@ public class Modelo {
         clientes.insertar(new Cliente(cliente));
     }
     public void insertar(Vehiculo vehiculo) throws OperationNotSupportedException {
-        Objects.requireNonNull(vehiculo, "El vehículo no puede ser nulo.");
         vehiculos.insertar(vehiculo);
     }
     public void insertar(Revision revision) throws OperationNotSupportedException {
-        Objects.requireNonNull(revision, "La revisión no puede ser nula insertar.");
-        clientes.buscar(revision.getCliente());
-        vehiculos.buscar(revision.getVehiculo());
-        revisiones.insertar(new Revision(revision));
+        Cliente cliente = clientes.buscar(revision.getCliente());
+        Vehiculo vehiculo = vehiculos.buscar(revision.getVehiculo());
+        revisiones.insertar(new Revision(cliente, vehiculo, revision.getFechaInicio()));
 
     }
     public Cliente buscar(Cliente cliente) {
-        Objects.requireNonNull(cliente, "El cliente no puede ser nulo buscar.");
-        clientes.buscar(cliente);
+        Objects.requireNonNull(clientes.buscar(cliente), "No existe un cliente igual.");
         return new Cliente(cliente);
     }
     public Vehiculo buscar(Vehiculo vehiculo) {

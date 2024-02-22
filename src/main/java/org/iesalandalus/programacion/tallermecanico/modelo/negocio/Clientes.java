@@ -8,25 +8,25 @@ import java.util.List;
 import java.util.Objects;
 
 public class Clientes {
-    private final List<Cliente> clientes;
+    private final List<Cliente> coleccionClientes;
 
     public Clientes() {
-        clientes = new ArrayList<>();
+        coleccionClientes = new ArrayList<>();
     }
     public List<Cliente> get() {
-        return clientes;
+        return coleccionClientes;
     }
     public void insertar(Cliente cliente) throws OperationNotSupportedException {
         Objects.requireNonNull(cliente, "No se puede insertar un cliente nulo.");
-        if (clientes.contains(cliente)) {
+        if (coleccionClientes.contains(cliente)) {
             throw new OperationNotSupportedException("Ya existe un cliente con ese DNI.");
         }
-        clientes.add(cliente);
+        coleccionClientes.add(cliente);
     }
     public boolean modificar(Cliente cliente, String nombre, String telefono) throws OperationNotSupportedException {
         Objects.requireNonNull(cliente, "No se puede modificar un cliente nulo.");
         boolean modificacion = false;
-        if (!clientes.contains(cliente)) {
+        if (!coleccionClientes.contains(cliente)) {
             throw new OperationNotSupportedException("No existe ningún cliente con ese DNI.");
         }
         if (nombre != null && !nombre.isBlank()) {
@@ -42,16 +42,16 @@ public class Clientes {
     }
     public Cliente buscar(Cliente cliente) {
         Objects.requireNonNull(cliente, "No se puede buscar un cliente nulo.");
-        int indice = clientes.indexOf(cliente);
-        return indice != -1 ? clientes.get(indice) : null;
+        int indice = coleccionClientes.indexOf(cliente);
+        return indice != -1 ? coleccionClientes.get(indice) : null;
     }
     public void borrar(Cliente cliente) throws OperationNotSupportedException {
         Objects.requireNonNull(cliente, "No se puede borrar un cliente nulo.");
-        int indice = clientes.indexOf(cliente);
+        int indice = coleccionClientes.indexOf(cliente);
         if (indice == -1) {
             throw new OperationNotSupportedException("No existe ningún cliente con ese DNI.");
         } else {
-            clientes.remove(indice);
+            coleccionClientes.remove(indice);
         }
     }
 }

@@ -11,26 +11,26 @@ import java.util.List;
 import java.util.Objects;
 
 public class Revisiones {
-    private List<Revision> revisiones;
+    private List<Revision> coleccionRevisiones;
 
     public Revisiones() {
-        revisiones = new ArrayList<>();
+        coleccionRevisiones = new ArrayList<>();
     }
     public List<Revision> get() {
-        return new ArrayList<>(revisiones);
+        return new ArrayList<>(coleccionRevisiones);
     }
     public List<Revision> get(Cliente cliente) {
-        List<Revision> clientes = new ArrayList<>();
-        for (Revision revision : revisiones) {
+        List<Revision> revisionesClientes = new ArrayList<>();
+        for (Revision revision : coleccionRevisiones) {
             if (revision.getCliente().equals(cliente)) {
-                clientes.add(revision);
+                revisionesClientes.add(revision);
             }
         }
-        return clientes;
+        return revisionesClientes;
     }
     public List<Revision> get(Vehiculo vehiculo) {
         List<Revision> vehiculos = new ArrayList<>();
-        for (Revision revision : revisiones) {
+        for (Revision revision : coleccionRevisiones) {
             if (revision.getVehiculo().equals(vehiculo)) {
                 vehiculos.add(revision);
             }
@@ -40,10 +40,10 @@ public class Revisiones {
     public void insertar(Revision revision) throws OperationNotSupportedException {
         Objects.requireNonNull(revision, "No se puede insertar una revisión nula.");
         comprobarRevision(revision.getCliente(), revision.getVehiculo(), revision.getFechaInicio());
-        revisiones.add(revision);
+        coleccionRevisiones.add(revision);
     }
     private void comprobarRevision(Cliente cliente, Vehiculo vehiculo, LocalDate fechaRevision) throws OperationNotSupportedException {
-        for (Revision revision : revisiones) {
+        for (Revision revision : coleccionRevisiones) {
             if (revision.getCliente().equals(cliente)) {
                 if (!revision.estaCerrada()) {
                     throw new OperationNotSupportedException("El cliente tiene otra revisión en curso.");
@@ -64,8 +64,8 @@ public class Revisiones {
     }
     private Revision getRevision(Revision revision) {
         Objects.requireNonNull(revision, "La revisión no puede ser nula.");
-        int indice = revisiones.indexOf(revision);
-        return indice == -1 ? null : revisiones.get(indice);
+        int indice = coleccionRevisiones.indexOf(revision);
+        return indice == -1 ? null : coleccionRevisiones.get(indice);
     }
 
     public void anadirHoras(Revision revision, int horas) throws OperationNotSupportedException {
@@ -92,13 +92,13 @@ public class Revisiones {
     }
     public Revision buscar(Revision revision) {
         Objects.requireNonNull(revision, "No se puede buscar una revisión nula.");
-        return revisiones.contains(revision) ? getRevision(revision) : null;
+        return coleccionRevisiones.contains(revision) ? getRevision(revision) : null;
     }
     public void borrar(Revision revision) throws OperationNotSupportedException {
         Objects.requireNonNull(revision, "No se puede borrar una revisión nula.");
-        if (!revisiones.contains(revision)) {
+        if (!coleccionRevisiones.contains(revision)) {
             throw new OperationNotSupportedException("No existe ninguna revisión igual.");
         }
-        revisiones.remove(revision);
+        coleccionRevisiones.remove(revision);
     }
 }

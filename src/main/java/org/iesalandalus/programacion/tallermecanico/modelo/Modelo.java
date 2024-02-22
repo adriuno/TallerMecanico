@@ -20,21 +20,19 @@ public class Modelo {
     Clientes clientes;
 
     public Modelo() {
-        revisiones = new Revisiones();
-        vehiculos = new Vehiculos();
-        clientes = new Clientes();
+        comenzar();
     }
 
     public void comenzar() {
-        Modelo modelo = new Modelo();
+        revisiones = new Revisiones();
+        vehiculos = new Vehiculos();
+        clientes = new Clientes();
     }
     public void terminar() {
         System.out.print("El modelo ha terminado de ejecutarse.");
     }
     public void insertar(Cliente cliente) throws OperationNotSupportedException {
-        Objects.requireNonNull(cliente, "El cliente no puede ser nulo.");
-        cliente = new Cliente(cliente);
-        clientes.insertar(cliente);
+        clientes.insertar(new Cliente(cliente));
     }
     public void insertar(Vehiculo vehiculo) throws OperationNotSupportedException {
         Objects.requireNonNull(vehiculo, "El vehículo no puede ser nulo.");

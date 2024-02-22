@@ -43,6 +43,6 @@ public enum Opcion {
 
     @Override
     public String toString() {
-        return String.format("%s - %s", this.numeroOpcion, this.mensaje);
+        return String.format("%s - %s%n", this.numeroOpcion, this.mensaje);
     }
 }

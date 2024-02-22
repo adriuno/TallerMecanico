@@ -12,7 +12,6 @@ import java.util.Arrays;
 
 public class Consola {
     private static final String CADENA_FORMATO_FECHA = "dd/MM/yyyy";
-    private static Opcion opcion;
     private Consola() {}
 
     public static void mostrarCabecera(String mensaje) {
@@ -22,7 +21,7 @@ public class Consola {
         System.out.println(subrayado);
     }
     public static void mostrarMenu() {
-        System.out.print("Bienvenido al menú del Taller Mecánico. Para realizar una acción, seleccione una opción.");
+        System.out.println("Bienvenido al menú del Taller Mecánico. Para realizar una acción, seleccione una opción.");
         System.out.println("--------------------");
         System.out.println("Opciones");
         System.out.println();

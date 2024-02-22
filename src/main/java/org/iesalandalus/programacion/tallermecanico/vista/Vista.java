@@ -7,7 +7,9 @@ import java.util.Objects;
 
 public class Vista {
     Controlador controlador;
-    public Vista() {    }
+    public Vista() throws OperationNotSupportedException {
+        comenzar();
+    }
 
     public void setControlador(Controlador controlador) {
         Objects.requireNonNull(controlador, "El controlador no puede ser nulo.");
@@ -22,7 +24,6 @@ public class Vista {
         System.out.println("Cerrando Vista. Que tenga un buen día.");
     }
     private void ejecutar(Opcion opcion) throws OperationNotSupportedException {
-        Consola.elegirOpcion();
         switch (opcion) {
             case INSERTAR_CLIENTE -> insertarCliente();
             case INSERTAR_VEHICULO -> insertarVehiculo();
@@ -157,4 +158,6 @@ public class Vista {
     private void salir() {
         System.out.println("Saliendo.");
     }
+
+
 }

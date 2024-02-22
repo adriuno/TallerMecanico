@@ -58,21 +58,16 @@ public class Modelo {
         return new Revision(revision);
     }
     public boolean modificar(Cliente cliente, String nombre, String telefono) throws OperationNotSupportedException {
-        Objects.requireNonNull(cliente, "El cliente no puede ser nulo modificar.");
         return clientes.modificar(cliente, nombre, telefono);
     }
 
     public void anadirHoras(Revision revision, int horas) throws OperationNotSupportedException {
-        Objects.requireNonNull(revision, "La revisión no puede ser nula añadir horas");
         revisiones.anadirHoras(revision, horas);
     }
     public void anadirPrecioMaterial(Revision revision, float precioMaterial) throws OperationNotSupportedException {
-        Objects.requireNonNull(revision, "La revisión no puede ser nula añadirPrecioMaterial");
         revisiones.anadirPrecioMaterial(revision, precioMaterial);
     }
     public void cerrar(Revision revision, LocalDate fechaFin) throws OperationNotSupportedException {
-        Objects.requireNonNull(revision, "La revisión no puede ser nula cerrar.");
-        Objects.requireNonNull(fechaFin, "La fecha de fin no puede ser nula cerrar.");
         revisiones.cerrar(revision, fechaFin);
     }
     public void borrar(Cliente cliente) throws OperationNotSupportedException {
@@ -101,7 +96,7 @@ public class Modelo {
         return listaClientes;
     }
     public List<Vehiculo> getVehiculos() {
-        return new ArrayList<>(vehiculos.get());
+        return vehiculos.get();
     }
     public List<Revision> getRevisiones() {
         List<Revision> listaRevision = new ArrayList<>();

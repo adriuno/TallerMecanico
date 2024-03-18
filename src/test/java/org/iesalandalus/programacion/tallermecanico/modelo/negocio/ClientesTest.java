@@ -1,6 +1,10 @@
 package org.iesalandalus.programacion.tallermecanico.modelo.negocio;
 
 import org.iesalandalus.programacion.tallermecanico.modelo.dominio.Cliente;
+<<<<<<< HEAD
+=======
+import org.iesalandalus.programacion.tallermecanico.modelo.negocio.memoria.Clientes;
+>>>>>>> profesor/refactorizacion_herencia
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -15,7 +19,11 @@ class ClientesTest {
 
     private static Cliente cliente1;
     private static Cliente cliente2;
+<<<<<<< HEAD
     private Clientes clientes;
+=======
+    private IClientes clientes;
+>>>>>>> profesor/refactorizacion_herencia
 
     @BeforeEach
     void init() {

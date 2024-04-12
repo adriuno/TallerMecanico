@@ -1,9 +1,6 @@
 package org.iesalandalus.programacion.tallermecanico.vista.texto;
 
-import org.iesalandalus.programacion.tallermecanico.modelo.dominio.Cliente;
-import org.iesalandalus.programacion.tallermecanico.modelo.dominio.Mecanico;
-import org.iesalandalus.programacion.tallermecanico.modelo.dominio.Revision;
-import org.iesalandalus.programacion.tallermecanico.modelo.dominio.Trabajo;
+import org.iesalandalus.programacion.tallermecanico.modelo.dominio.*;
 import org.iesalandalus.programacion.tallermecanico.vista.Vista;
 import org.iesalandalus.programacion.tallermecanico.vista.eventos.Evento;
 import org.iesalandalus.programacion.tallermecanico.vista.eventos.GestorEventos;

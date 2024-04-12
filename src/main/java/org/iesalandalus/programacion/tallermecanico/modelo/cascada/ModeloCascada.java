@@ -1,8 +1,8 @@
 package org.iesalandalus.programacion.tallermecanico.modelo.cascada;
 
 import org.iesalandalus.programacion.tallermecanico.modelo.Modelo;
-import org.iesalandalus.programacion.tallermecanico.modelo.dominio.Cliente;
-import org.iesalandalus.programacion.tallermecanico.modelo.dominio.Revision;
+import org.iesalandalus.programacion.tallermecanico.modelo.dominio.*;
+import org.iesalandalus.programacion.tallermecanico.modelo.negocio.*;
 
 import javax.naming.OperationNotSupportedException;
 import java.time.LocalDate;

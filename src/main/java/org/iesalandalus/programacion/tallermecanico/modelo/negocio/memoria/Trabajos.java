@@ -1,8 +1,6 @@
 package org.iesalandalus.programacion.tallermecanico.modelo.negocio.memoria;
 
-import org.iesalandalus.programacion.tallermecanico.modelo.dominio.Cliente;
-import org.iesalandalus.programacion.tallermecanico.modelo.dominio.Mecanico;
-import org.iesalandalus.programacion.tallermecanico.modelo.dominio.Trabajo;
+import org.iesalandalus.programacion.tallermecanico.modelo.dominio.*;
 import org.iesalandalus.programacion.tallermecanico.modelo.negocio.ITrabajos;
 
 import javax.naming.OperationNotSupportedException;
